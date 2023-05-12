@@ -16,6 +16,7 @@ current_csv = default_settings[3]
 
 with open(f"{current_csv}") as file:
   contents = list(csv.reader(file))
+  file.close()
 
 fun.scrubber(contents)
 
@@ -146,6 +147,7 @@ layout = 1  # The currently visible layout
 while True:
   with open("user_settings.csv","r") as f:
     default_settings = list(csv.reader(f))[0]
+    f.close()
   current_theme = default_settings[0]
   current_font = (default_settings[1],default_settings[2])
   try:
