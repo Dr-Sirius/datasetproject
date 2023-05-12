@@ -47,14 +47,14 @@ def appender(csv_file,append_data=False):
 
 def search(contents,input):
   inquary = None
-  print(input)
+  
   
   for red in contents:
     if input.lower() in red[0].lower():
       inquary = red
  
   
-  print(inquary)
+  
   return inquary
     
 def sort(content,header,sort_param,key=None):
@@ -89,7 +89,7 @@ def only_nums(header,content):
       num_list.append(i)
     
   for i,v in enumerate(num_list):
-    print(v)
+    
     hed_list.append(header[v])
     
   return hed_list
@@ -104,7 +104,7 @@ def master_math(header,content,num_headers,key,field,zero=False):
     math = []
     for red in content:
       if len(red) == len(header):
-        print(red)
+        
         if zero == False:
           if str(red[hed_index]).isdigit():
             math.append(red[hed_index])
@@ -197,7 +197,7 @@ def wiki_search(field,summary=False,link=False,result_select=0,jr=True):
         page = wiki.page(results[result_select],redirect=True)
         
         contents = page.content
-        print(contents)
+        
         
         data.append(contents)
         if link==True:
